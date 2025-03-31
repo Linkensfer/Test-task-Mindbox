@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0%;
+  margin: 3%;
+  max-width: 100%;
+}
+
+.input {
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #F2F2F2;
+  margin-right: 10px;
+  padding-left: 16px;
+
+  &:hover {
+    background-color: #2195f336;
+  }
+}
