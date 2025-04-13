@@ -56,7 +56,7 @@ describe('AddTodo', () => {
 
     const input = screen.getByPlaceholderText('Add todos...')
     fireEvent.change(input, { target: { value: 'Задача 2' } })
-    fireEvent.keyPress(input, { key: 'Enter', code: 'Enter', charCode: 13 })
+    fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' })
 
     const state = store.getState() as RootState
     expect(state.todos.todos).toHaveLength(1)
@@ -90,7 +90,7 @@ describe('AddTodo', () => {
     fireEvent.change(input, { target: { value: 'Новая задача' } })
     fireEvent.click(screen.getByText('Add Todo'))
   
-    expect(input.value).toBe('')
+    expect((input as HTMLInputElement).value).toBe('')
   })
 
 })

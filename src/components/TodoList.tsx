@@ -8,16 +8,7 @@ export function TodoList () {
   const todos = useSelector((state: RootState) => state.todos.todos)
   const filter = useSelector((state: RootState) => state.todos.filter)
 
-  const filteredTodos = todos.filter(todo => {
-    switch (filter) {
-      case 'active':
-        return !todo.completed
-      case 'completed':
-        return todo.completed
-      default:
-        return true
-    }
-  })
+  const filteredTodos = filter === 'all' ? todos : todos.filter(todo => filter === 'active' ? !todo.completed : todo.completed)
   
   return (
     <List className={styles.list}>

@@ -5,7 +5,7 @@ import todoReducer, {
   deleteCompletedTodo,
   setFilter
 } from './todoSlice'
-import { ITodo } from "../models/models"
+import { ITodo } from "../types/types"
 
 describe('todoSlice', () => {
   const initialState = {

@@ -12,7 +12,7 @@ function App() {
     <div className={styles.wrapper}>
       <AddTodo/>
 
-      {todos.length > 0 ? (
+      {todos.length ? (
         <>
           <TodoList />
           <Footer />
@@ -22,7 +22,7 @@ function App() {
       )}
 
     </div>
-  );
+  )
 }
 
 export default App

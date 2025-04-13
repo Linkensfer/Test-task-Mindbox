@@ -27,7 +27,7 @@ export function AddTodo () {
         inputProps={{ 'aria-label': 'search' }}
         value={inputText}
         onChange={e => setInputText(e.target.value)}
-        onKeyPress={e => e.key === 'Enter' && onClick()}
+        onKeyDown={e => e.key === 'Enter' && onClick()}
       />
 
       <Button

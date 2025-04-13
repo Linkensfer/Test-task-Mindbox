@@ -5,7 +5,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import todoReducer from './store/todoSlice'
 import App from './App'
 import { Footer } from './components/Footer'
-import { FilterType } from './models/models'
+import { FilterType } from './types/types'
 import userEvent from '@testing-library/user-event'
 
 describe('App', () => {

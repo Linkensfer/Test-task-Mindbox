@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import todoReducer from '../store/todoSlice'
 import { TodoList } from './TodoList'
-import { FilterType, ITodo } from '../models/models'
+import { FilterType, ITodo } from '../types/types'
 import userEvent from '@testing-library/user-event'
 import { Footer } from './Footer'
 
@@ -77,7 +77,7 @@ describe('TodoList', () => {
     expect(screen.queryByRole('listitem')).not.toBeInTheDocument()
   })
 
-  it('Проверка фильтраии задач по статусу', async () => {
+  it('Проверка фильтрации задач по статусу', async () => {
     const store = createTestStore()
     render(
       <Provider store={store}>

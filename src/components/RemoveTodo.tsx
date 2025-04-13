@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../store/todoSlice'
-import { ITodo } from "../models/models"
+import { ITodo } from "../types/types"
 import { AppDispatch } from '../store'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Dialog from '@mui/material/Dialog'
@@ -12,10 +12,10 @@ import DialogTitle from '@mui/material/DialogTitle'
 import Button from '@mui/material/Button'
 
 interface RemoveTodoProps {
-  unitElement: ITodo
+  id: string
 }
 
-export function RemoveTodo({ unitElement }: RemoveTodoProps) {
+export function RemoveTodo({ id }: RemoveTodoProps) {
   const dispatch = useDispatch<AppDispatch>()
   const [open, setOpen] = useState(false)
 
@@ -28,18 +28,17 @@ export function RemoveTodo({ unitElement }: RemoveTodoProps) {
   }
 
   const handleDeleteAndClose = () => {
-    dispatch(deleteTodo(unitElement.id))
+    dispatch(deleteTodo(id))
     setOpen(false)
   }
 
   return (
   <>
-    <DeleteIcon onClick={handleClickOpen}/> 
+    <DeleteIcon aria-label="Удалить задачу" onClick={handleClickOpen}/> 
     <Dialog
       open={open}
       onClose={handleClose}
       role="button"
-      aria-label="Удалить задачу"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
@@ -52,8 +51,8 @@ export function RemoveTodo({ unitElement }: RemoveTodoProps) {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Отмена</Button>
-        <Button onClick={handleDeleteAndClose} autoFocus>
+        <Button aria-label="Отмена" onClick={handleClose}>Отмена</Button>
+        <Button aria-label="Да" onClick={handleDeleteAndClose} autoFocus>
           Да
         </Button>
       </DialogActions>

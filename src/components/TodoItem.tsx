@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { ITodo } from "../models/models"
+import { ITodo } from "../types/types"
 import { RemoveTodo } from "./RemoveTodo"
 import { useDispatch } from 'react-redux'
 import { updateTodo } from "../store/todoSlice"
@@ -32,7 +32,7 @@ export const TodoItem = memo(
         </ListItemButton>
   
         <RemoveTodo
-          unitElement={unitElement}
+          id={unitElement.id}
         />
   
       </ListItem>

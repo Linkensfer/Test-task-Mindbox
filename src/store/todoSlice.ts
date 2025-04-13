@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ITodo, FilterType } from "../models/models"
+import { ITodo, FilterType } from "../types/types"
 
 export const todoSlice = createSlice({
   name: 'todos',

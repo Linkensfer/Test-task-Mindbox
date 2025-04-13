@@ -5,7 +5,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import todoReducer from '../store/todoSlice'
 import { TodoItem } from './TodoItem'
 import { TodoList } from './TodoList' 
-import { FilterType, ITodo } from '../models/models'
+import { FilterType, ITodo } from '../types/types'
 import userEvent from '@testing-library/user-event'
 
 describe('TodoItem', () => {

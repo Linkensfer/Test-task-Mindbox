@@ -6,7 +6,7 @@ import todoReducer from '../store/todoSlice'
 import { Footer } from './Footer'
 import { TodoList } from './TodoList'
 import { setFilter } from '../store/todoSlice'
-import { FilterType, ITodo } from '../models/models'
+import { FilterType, ITodo } from '../types/types'
 import userEvent from '@testing-library/user-event'
 
 describe('Footer', () => {
